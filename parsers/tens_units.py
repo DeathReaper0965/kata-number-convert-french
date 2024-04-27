@@ -67,7 +67,7 @@ class TensUnits(BaseParser):
 
         processed_value = remove_zero_and_join([curr_tens, curr_units])
 
-        if processed_value.endswith("vingt") and len(processed_value) > len("vingt"):
+        if processed_value.endswith(TensFrenchForm.TWENTY.value) and len(processed_value) > len(TensFrenchForm.TWENTY.value):
             logger.info("Adding Plurality to Tens and Units")
             
             processed_value += "s"

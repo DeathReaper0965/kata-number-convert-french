@@ -37,7 +37,7 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
         
     """
 
-    logger.info(f"Given Input, french-style and output-type: {nums_str}, {french_style}, {output_type}")
+    print(f"Given Input, french-style and output-type: {nums_str}, {french_style}, {output_type}")
     logger.info("Extracting numbers from string, replacing rudimentary symbols and splitting")
     original_values = nums_str.replace("[", "").replace("]", "").replace('"', "").replace("'", "").split(",")
 
@@ -48,7 +48,7 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
 
     logger.info("Loop through the extracted numbers and convert them to french form!")
     for idx, num in enumerate(nums_list):
-        if num is None:
+        if num is None or len(str(num)) > 12:
             french_converted_list.append(None)
             french_converted_json[original_values[idx]] = None
             continue
@@ -74,11 +74,15 @@ def main():
     gradio_app = gr.Interface(
         fn=convert_to_french,
         inputs=[
-            gr.Text(label="Input List of Numbers (Comma Separated, as shown in placeholder)", placeholder="[0, 10]"), 
+            gr.Text(
+                label="Input List of Numbers (Comma Separated, as shown in placeholder)", 
+                placeholder="[0, 10]"
+            ), 
             gr.Dropdown(
                 choices=[_.value for _ in FrenchStyle], 
                 label="Select a French Style", 
-                value=FrenchStyle.FRANCE_FRENCH.value),
+                value=FrenchStyle.FRANCE_FRENCH.value
+            ),
             gr.Dropdown(
                 choices=[_.value for _ in OutputType],
                 label="Desired Output Type",
@@ -91,7 +95,7 @@ def main():
     )
 
     logger.info("Launching Gradio App Interface for accepting inputs!")
-    gradio_app.launch()
+    gradio_app.launch(show_error=True)
 
 
 if __name__ == '__main__':
