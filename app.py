@@ -62,24 +62,29 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
     return french_converted_list
 
 
-# initializes the Gradio App
-gradio_app = gr.Interface(
-    fn=convert_to_french,
-    inputs=[
-        gr.Text(label="Input List of Numbers (Comma Separated, as shown in placeholder)", placeholder="[0, 10]"), 
-        gr.Dropdown(
-            choices=[_.value for _ in FrenchStyle], 
-            label="Select a French Style", 
-            value=FrenchStyle.FRANCE_FRENCH.value),
-        gr.Dropdown(
-            choices=[_.value for _ in OutputType],
-            label="Desired Output Type",
-            value=OutputType.JSON.value
-        )
-    ],
-    outputs=gr.Json(label="French Form of the input number list"), 
-    allow_flagging="never",
-    title="Kata: Number to French Converter"
-)
+def main():
+    # initializes the Gradio App
+    gradio_app = gr.Interface(
+        fn=convert_to_french,
+        inputs=[
+            gr.Text(label="Input List of Numbers (Comma Separated, as shown in placeholder)", placeholder="[0, 10]"), 
+            gr.Dropdown(
+                choices=[_.value for _ in FrenchStyle], 
+                label="Select a French Style", 
+                value=FrenchStyle.FRANCE_FRENCH.value),
+            gr.Dropdown(
+                choices=[_.value for _ in OutputType],
+                label="Desired Output Type",
+                value=OutputType.JSON.value
+            )
+        ],
+        outputs=gr.Json(label="French Form of the input number list"), 
+        allow_flagging="never",
+        title="Kata: Number to French Converter"
+    )
 
-gradio_app.launch()
+    gradio_app.launch()
+
+
+if __name__ == '__main__':
+    main()

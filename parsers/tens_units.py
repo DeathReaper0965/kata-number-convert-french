@@ -64,7 +64,7 @@ class TensUnits(BaseParser):
 
         processed_value = remove_zero_and_join([curr_tens, curr_units])
 
-        if (processed_value.endswith("vingt") and len(processed_value) > len("vingt")):
+        if processed_value.endswith("vingt") and len(processed_value) > len("vingt"):
             processed_value += "s" # Check to make the convertion to be plural
 
         if self.initial_number % 100 not in [1, 11, 81, 91]: # Check to add `-et` for to the required places where number ends with "1"

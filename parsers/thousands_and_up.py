@@ -59,9 +59,9 @@ class ThousandsAndUp(Hundreds, TensUnits):
         hundreds_value = super().process() # base case, Calls the `Hundreds` class for capturing the hundredth part
         tens_units_value = super(Hundreds, self).process() # base case, Calls the `TensUnits` class for capturing the Tens and Units part
 
-        thousands_value = remove_zero_and_join([hundreds_value, tens_units_value, self.thousands_up_form["text"]])
+        thousands_and_up_value = remove_zero_and_join([hundreds_value, tens_units_value, self.thousands_up_form["text"]])
 
         if self.remaining_num == 0:
-            thousands_value += "s" # Check and add if number if plural, as defined by french rules
+            thousands_and_up_value += "s" # Check and add if number if plural, as defined by french rules
 
-        return thousands_value
+        return thousands_and_up_value
