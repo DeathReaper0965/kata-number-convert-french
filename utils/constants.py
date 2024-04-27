@@ -2,13 +2,19 @@ from enum import Enum
 
 
 class FrenchStyle(Enum):
-    # Types of French Styles Present for easier access
+    """
+        Types of French Styles currently supported for easier access and definition.
+    """
+
     FRANCE_FRENCH = 'France-French'
     BELGIUM_FRENCH = 'Belgium-French'
 
 
 class UnitsFrenchForm(Enum):
-    # Initializing the unit forms of each number to French forms
+    """
+        Enum for the unit form constants of each number to French forms.
+    """
+
     ZERO = 'zéro'
     ONE = 'un'
     TWO = 'deux'
@@ -34,7 +40,12 @@ class UnitsFrenchForm(Enum):
 
 
 class TensFrenchForm(Enum):
-    # Initializing the Tens form of 10-90 with both french styles as 
+    """
+        Enum for the Tens form of 10-90 in all french styles.
+        Also provides easier access if a new french style is added in the future. 
+        Moreover, this is handled automatically in the BaseParser class.
+    """
+
     TEN = 'dix'
     TWENTY = 'vingt'
     THIRTY = 'trente'
@@ -56,19 +67,41 @@ class TensFrenchForm(Enum):
     
 
 class HundredFrenchForm(Enum):
+    """
+        Representation of hundred in its french form. 
+        Declared separately here as conditions vary for numbers greater than hundered and below thousand.
+    """
+
     HUNDRED = 'cent'
 
+
 class ThousandsAndUpFrenchForm(Enum):
+    """
+        Representation of numbers that are thousands and up.
+        Provides a very easy one-stop way to register higher numbers.
+        Just define the required higher number here and you're good to go.
+    """
+
     THOUSAND = {
         'text': 'mille',
         'modulus': 10**3
     }
+
     MILLION = {
         'text': 'million',
         'modulus': 10**6
     }
+
     MILLIARD = {
         'text': 'milliard',
         'modulus': 10**9
     }
 
+
+class OutputType(Enum):
+    """
+        Types of output desired by the user.
+    """
+
+    JSON = 'JSON'
+    LIST = 'LIST'
