@@ -22,9 +22,9 @@ class BaseParser:
                 number: int
                     The base number initiazed to be converted to french which may undergo transformation in the child classes.
                 french_style: str
-                    Type of french style to be used for converting the number. Refer to `constants.py` file for more.
+                    Type of french style to be used for converting the number. Refer to `constants.py` file for more. Defaults to `France-French`.
                 thousands_up_form: Dict
-                    A dictionary of the french representation for numbers greater than thousand. Refer to `constants.py` file for more.
+                    A dictionary of the french representation for numbers greater than thousand. Refer to `constants.py` file for more. Defaults to `None`.
 
             Returns
             -------

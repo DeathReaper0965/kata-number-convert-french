@@ -8,8 +8,8 @@ Made using [Gradio](https://www.gradio.app/) for two main reasons:
 
 This application basically takes 3 inputs. Their details are as follows:
 1. **Input List of numbers:** [MANDATORY] This is a comma separated string that is splitted internally to process one number at a time.
-2. **French Style**: [OPTIONAL] Currently two French Styles are followed, select from either of `France-French` or `Belgium-french`
-3. **Output Type**: [OPTIONAL] Either of `JSON` or `LIST`.
+2. **French Style**: [OPTIONAL] Currently two French Styles are followed, select from either of `France-French` or `Belgium-french`. Defaults to `France-French`.
+3. **Output Type**: [OPTIONAL] Either of `JSON` or `LIST`. Defaults to `JSON`.
     - if `JSON` is selected, a Dictionary of values corresponding to each input number is displayed.
     - if `LIST` is selected, a List of values are displayed in the given order of the input.
 
@@ -33,6 +33,12 @@ Once started, just head over to [http://localhost:7860/](http://localhost:7860/)
 
 **NOTE:** For the very first call, it may take time for the output, as Gradio initializes some necessary cache. However, all the subsequent calls will be very fast (often within fraction of seconds).
 
+
+## Executing Tests
+UnitTest cases are added under the folder `tests/`. From root folder, execute the test cases using the following command:<br>
+`python -m unittest discover tests "*.py" -v`
+
+
 ## Demo Images
 
 1. An example with a choice of French-Style as "France" and Output type as "Json"
@@ -55,4 +61,3 @@ Once started, just head over to [http://localhost:7860/](http://localhost:7860/)
 1. Currently supports only the numerical part conversion. 
 2. Decimal part and Fractional numbers conversion to be added.
 3. Speech-To-Text and Text-To-Speech Models are to be added with necessary changes in Gradio UI.
-4. Unit Test Cases for the functionality added, mostly for checking to assert correct values at edge-cases.
