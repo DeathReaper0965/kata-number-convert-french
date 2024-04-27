@@ -1,3 +1,4 @@
+import logging
 from typing import Dict
 
 from . import *
@@ -5,6 +6,8 @@ from . import *
 from utils.constants import FrenchStyle
 
 from .base import BaseParser
+
+logger = logging.getLogger(__name__)
 
 
 class Hundreds(BaseParser):
@@ -48,6 +51,7 @@ class Hundreds(BaseParser):
         hundreds_value = self.hundreds_forms[self.hundredth_place-1]
 
         if self.initial_number % 100 == 0: # checking the number's tens and unit place for adding plurality.
+            logger.info("Adding Plurality to Hundreds")
             hundreds_value += "s"
         
         return hundreds_value

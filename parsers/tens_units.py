@@ -1,3 +1,4 @@
+import logging
 from typing import Dict, List
 
 from . import *
@@ -6,6 +7,8 @@ from utils.constants import FrenchStyle
 from utils.helpers import remove_zero_and_join
 
 from .base import BaseParser
+
+logger = logging.getLogger(__name__)
 
 
 class TensUnits(BaseParser):
@@ -65,9 +68,13 @@ class TensUnits(BaseParser):
         processed_value = remove_zero_and_join([curr_tens, curr_units])
 
         if processed_value.endswith("vingt") and len(processed_value) > len("vingt"):
-            processed_value += "s" # Check to make the convertion to be plural
+            logger.info("Adding Plurality to Tens and Units")
+            
+            processed_value += "s"
 
-        if self.initial_number % 100 not in [1, 11, 81, 91]: # Check to add `-et` for to the required places where number ends with "1"
+        if self.initial_number % 100 not in [1, 11, 81, 91]:
+            logger.info("Adding `-et` to the required places where number ends with '1'")
+
             processed_value = processed_value.replace("-un", "-et-un").replace("-onze", "-et-onze")
 
         return processed_value

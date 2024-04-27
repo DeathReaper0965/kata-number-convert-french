@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 
 import gradio as gr
@@ -7,6 +8,8 @@ from utils.constants import FrenchStyle, UnitsFrenchForm
 from french_converter import FrenchConverter
 
 from parsers import *
+
+logger = logging.getLogger(__name__)
 
 
 def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any:
@@ -34,6 +37,8 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
         
     """
 
+    logger.info(f"Given Input, french-style and output-type: {nums_str}, {french_style}, {output_type}")
+    logger.info("Extracting numbers from string, replacing rudimentary symbols and splitting")
     original_values = nums_str.replace("[", "").replace("]", "").replace('"', "").replace("'", "").split(",")
 
     nums_list = [int(_) if _.strip().isnumeric() else None for _ in original_values]
@@ -41,6 +46,7 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
     french_converted_list = []
     french_converted_json = {}
 
+    logger.info("Loop through the extracted numbers and convert them to french form!")
     for idx, num in enumerate(nums_list):
         if num is None:
             french_converted_list.append(None)
@@ -63,7 +69,8 @@ def convert_to_french(nums_str: str, french_style: str, output_type: str) -> Any
 
 
 def main():
-    # initializes the Gradio App
+    # Initializes the Gradio App
+
     gradio_app = gr.Interface(
         fn=convert_to_french,
         inputs=[
@@ -83,6 +90,7 @@ def main():
         title="Kata: Number to French Converter"
     )
 
+    logger.info("Launching Gradio App Interface for accepting inputs!")
     gradio_app.launch()
 
 

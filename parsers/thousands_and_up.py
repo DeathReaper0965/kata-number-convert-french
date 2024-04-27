@@ -48,9 +48,9 @@ class ThousandsAndUp(Hundreds, TensUnits):
         """
 
         if self.thousand_up_num_div == 0:
-            return UnitsFrenchForm.ZERO.value # base case, return `zéro` if `thousands_up_form` place is 0
+            return UnitsFrenchForm.ZERO.value # base case, return `zéro` if `thousand_up_num_div` place is 0
 
-        if self.thousand_up_num_div == 1:
+        if self.thousand_up_num_div == 1: # base case, return one's form when `thousand_up_num_div` place is 1
             if self.thousands_up_form["text"] == ThousandsAndUpFrenchForm.THOUSAND.value["text"]:
                 return self.thousands_up_form["text"]
             else:
