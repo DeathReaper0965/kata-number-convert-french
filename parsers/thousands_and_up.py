@@ -20,7 +20,7 @@ class ThousandsAndUp(Hundreds, TensUnits):
             return UnitsFrenchForm.ZERO.value
 
         if self.thousand_num_div == 1:
-            if self.thousands_up_form["text"] == PostHundredsFrenchForm.THOUSAND.value["text"]:
+            if self.thousands_up_form["text"] == ThousandsAndUpFrenchForm.THOUSAND.value["text"]:
                 return self.thousands_up_form["text"]
             else:
                 return "-".join([UnitsFrenchForm.ONE.value, self.thousands_up_form['text']])

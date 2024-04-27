@@ -58,7 +58,7 @@ class TensFrenchForm(Enum):
 class HundredFrenchForm(Enum):
     HUNDRED = 'cent'
 
-class PostHundredsFrenchForm(Enum):
+class ThousandsAndUpFrenchForm(Enum):
     THOUSAND = {
         'text': 'mille',
         'modulus': 10**3
