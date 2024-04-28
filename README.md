@@ -73,13 +73,13 @@ UnitTest cases are added under the folder `tests/`. From root folder, execute th
 
 ## Demo Videos Using Speech
 1. An example with only a Single Input Number in Spoken Input Audio
-![Example-Single-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/main/demo_videos/Example-Single-Numbers-In-Speech.mp4?raw=true)
+![Example-Single-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-Single-Numbers-In-Speech.mp4)
 
 2. An example with Multiple Input Numbers in Spoken Input Audio
-![Example-Multiple-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/main/demo_videos/Example-Multiple-Numbers-In-Speech.mp4?raw=true)
+![Example-Multiple-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-Multiple-Numbers-In-Speech.mp4)
 
 3. An example with NO Numbers in Spoken Input Audio
-![Example-No-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/main/demo_images/Example-No-Numbers-In-Speech.mp4?raw=true)
+![Example-No-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-No-Numbers-In-Speech.mp4)
 
 
 ### Current Limitations and Next Steps
