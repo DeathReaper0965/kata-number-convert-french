@@ -105,3 +105,21 @@ class OutputType(Enum):
 
     JSON = 'JSON'
     LIST = 'LIST'
+
+
+class SpeechOutputs(Enum):
+    """
+        Constant speech outputs.
+    """
+    SORRY_MSG = "Sorry, I was unable to recognize any numbers from your speech!"
+    SUCCESS_MSG = "Given french form of the numbers are "
+    AND_CONNECTOR = " ,  and  , "
+
+
+class SpeechLangs(Enum):
+    """
+        Enum for Supported Speech Languages.
+    """
+
+    EN = "en"
+    FR = "fr"

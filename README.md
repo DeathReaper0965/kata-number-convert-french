@@ -21,6 +21,9 @@ Follow the below steps to run the application in your local machine:
 3. Create a new python 3.11 environment using: `conda create -n kata python=3.11` (This is helpful for separating the application's dependencies from system dependencies)
 4. Activate the environment: `conda activate kata`
 5. Install all required dependencies: `pip install -r requirements.txt`
+6. For supporting Speech, we have to install just one more dependency of `ffmpeg` as it helps us in captuning audio from Microphone. Install it from this page: https://www.ffmpeg.org/download.html
+
+**TIP**: All the steps from 3-5 can also be done by just executing `sh install.sh` from terminal. However, you still have to download `ffmeg` separately.
 
 #### That's it, we're all done with the installation and all that's left is to start the app.
 
@@ -39,7 +42,7 @@ UnitTest cases are added under the folder `tests/`. From root folder, execute th
 `python -m unittest discover tests "*.py" -v`
 
 
-## Demo Images
+## Demo Images Using Text
 
 1. An example with a choice of French-Style as "France" and Output type as "Json"
 ![Example-france-french-json](https://github.com/DeathReaper0965/kata-number-convert-french/blob/main/demo_images/Example-france-french-json.png?raw=true)
@@ -55,6 +58,10 @@ UnitTest cases are added under the folder `tests/`. From root folder, execute th
 
 5. An example showcasing long inputs (large number of numbers to be converted)
 ![Example-Long-Inputs](https://github.com/DeathReaper0965/kata-number-convert-french/blob/main/demo_images/Example-Long-Inputs.png?raw=true)
+
+
+## Demo Video Using Speech
+1. 
 
 
 ### Current Limitations and Next Steps
