@@ -73,13 +73,13 @@ UnitTest cases are added under the folder `tests/`. From root folder, execute th
 
 ## Demo Videos Using Speech
 1. An example with only a Single Input Number in Spoken Input Audio
-![Example-Single-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-Single-Numbers-In-Speech.mp4)
+https://github.com/DeathReaper0965/kata-number-convert-french/assets/11135080/9b76cd47-f4eb-40db-a7d9-48d2d1a45281
 
 2. An example with Multiple Input Numbers in Spoken Input Audio
-![Example-Multiple-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-Multiple-Numbers-In-Speech.mp4)
+https://github.com/DeathReaper0965/kata-number-convert-french/assets/11135080/a8998752-90ce-4177-b815-f8a6dd44957f
 
 3. An example with NO Numbers in Spoken Input Audio
-![Example-No-Numbers-In-Speech](https://github.com/DeathReaper0965/kata-number-convert-french/blob/speech_recognition/demo_videos/Example-No-Numbers-In-Speech.mp4)
+https://github.com/DeathReaper0965/kata-number-convert-french/assets/11135080/fef1dff8-4a49-423c-850e-96a32e49910c
 
 
 ### Current Limitations and Next Steps
