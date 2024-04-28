@@ -145,7 +145,11 @@ def recognize_speech_and_tts(audio: gr.Audio, french_style: str) -> str:
 
     print(f"Generating the speech of the constructed prompt: {speech_prompt}\n\n")
 
-    generated_speech = gTTS(text=speech_prompt, lang='fr', slow=True, tld='fr')
+    generated_speech = gTTS(text=speech_prompt, 
+                            lang=SpeechLangs.FR.value, 
+                            slow=True, 
+                            tld=SpeechLangs.FR.value
+                        )
     generated_speech.save(audio_file_name)
 
     return audio_file_name
